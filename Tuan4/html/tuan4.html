@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playout</title>
+    <link rel="stylesheet" href="../css/tuan4.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <ul class="menu">
+                <li><a href="https://24h.com.vn">HOME</a></li>
+                <li><a href="">SERVICES</a></li>
+                <li><a href="">CONTACT</a>
+                    <ul class="submenu">
+                        <li><a href="">PHONE</a></li>
+                        <li><a href="">INTERNET</a></li>
+                        <li><a href="">TIVI</a></li>
+                    </ul>
+                </li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">HELP</a></li>
+            </ul>
+            <span>
+                <form action="dangky.php" method="post">
+                    <label for="email">Email: </label>
+                    <input type="email" name="txtEmail" id="txtEmail" required placeholder="Nhap Email">
+                    <input type="submit" value="Submit" id="txtSubmitEmail">
+                </form>
+            </span>
+        </nav>
+        <header>
+            <p class="head">ĐÀ LẠT</p>
+        </header>
+            <div class="content">
+                <aside>
+                    <article>
+                        <h2>Du lịch</h2>
+                        <img src="../image/dalat1.jpg" >   
+                    </article>
+                    <article>
+                        <h2>Ngoại khóa</h2>
+                        <img src="../image/dalat1.jpg" >   
+                    </article>
+                    <article>
+                        <h2>Thông tin</h2>
+                        <img src="../image/dalat1.jpg" >  
+                    </article>
+                </aside>
+                <section>
+                    <p>ĐĂNG KÝ THÔNG TIN</p>
+                    <form action="" method="post">
+                        <fieldset>
+                            <legend>THONG TIN CỦA BẠN</legend>
+                            <label for="lblHoTen">Họ và tên: </label>
+                            <input type="text" name="txtHT" id="txtHT" placeholder="Nhap ho va ten" required><br>
+                            <label for="lblCCCD">CCCD/CMND: </label>
+                            <input type="number" name="numCCCD" id="numCCCD" placeholder="Nhap CCCD/CMND" required><br>
+                            <label for="lblNgaysinh">Ngày sinh: </label>
+                            <input type="date" name="dateNS" id="dateNS" placeholder="Nhap ngay sinh" required><br>
+                            <label for="lblGT">Giới tính: </label>
+                            <input type="radio" id="" name="GT">
+                            <label for="ft">Nam</label>
+                            <input type="radio" id="" name="GT">
+                            <label for="ft">Nữ</label>
+                        </fieldset>
+                    </form><br>
+                            <input type="submit" value="Submit">
+                </section>
+            </div>
+            <div class="clear"></div>
+            <footer><p>INDUSTRIAL UNVIVERSITY OF HOCHIMINHCITY</p></footer>
+    </div>
+</body>
+</html>
