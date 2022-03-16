@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tuan5</title>
+
+    <style type="text/css">
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+        }
+        div{
+            border-bottom: 1px solid #efefef;
+            margin:auto;
+            padding-bottom: 10px;
+            padding-top: 5px;
+            width: 720px;
+        }
+        .title{
+            float: left;
+            width: 200px;
+            text-align: right;
+            padding-right: 10px;
+            color: black;
+            font-size: 18px;
+    
+        }
+        .radio-buttons label{
+
+            float: none;
+        }
+        .sumit{
+            text-align: center;
+        }
+        input[type=submit], input[type=reset]{
+            padding: .1em .2em;
+            border: 1px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            background-color: black;
+            color: aliceblue;
+            font-size: 18px;
+        }
+        span{
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+    
+    <script>
+        function ktdn(){
+            //let mau=/^([a-z]+)((\s{1}[a-z]+){1,})$/i;
+            let mau=/^([a-z]+)$/i;
+            let chuoi=document.getElementById("txtdn").value;
+            if(mau.test(chuoi)==true){
+                spdn.innerText ="*";
+            }
+            else{
+                spdn.innerText ="bắt buộc,bắt đầu bằng ký tự không khoảng trắng";
+            }
+        }
+        function ktmk(){
+            let mau=/^(?=.\d).{6,}/;
+            let chuoi=document.getElementById("txtMK").value;
+            if(mau.test(chuoi)==true){
+                spMK.innerText ="*";
+            }
+            else{
+                spMK.innerText ="phải có chữ, số, ít nhất 6 ký tự";
+            }
+        }
+        function ktnlmk(){
+            
+            if(document.getElementById("txtnlMK").value == document.getElementById("txtMK").value){
+                spnlMK.innerText ="True";
+            }
+            else{
+                spnlMK.innerText ="False";
+            }
+        }
+        function ktht(){
+            let mau=/^([a-z]+)((\s{1}[a-z]+){1,})$/i;
+            
+            let chuoi=document.getElementById("txtHT").value;
+            if(mau.test(chuoi)==true){
+                spHt.innerText ="*";
+            }
+            else{
+                spHt.innerText ="phải giống mật khẩu";
+            }
+        }
+        function ktht(){
+            let mau=/^([a-z]+)((\s{1}[a-z]+){1,})$/i;
+            
+            let chuoi=document.getElementById("txtHT").value;
+            if(mau.test(chuoi)==true){
+                spHt.innerText ="* không được có số";
+            }
+            else{
+                spHt.innerText ="* bắt buộc";
+            }
+        }
+        function ktsdt(){
+            let mau=/^\d*$/;
+            
+            let chuoi=document.getElementById("txtdt").value;
+            if(mau.test(chuoi)==true){
+                spdt.innerText ="True";
+            }
+            else{
+                spdt.innerText ="False";
+            }
+        }
+        function ktemail(){
+            let mau=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            
+            let chuoi=document.getElementById("txtemail").value;
+            if(mau.test(chuoi)==true){
+                spemail.innerText ="True";
+            }
+            else{
+                spemail.innerText ="False";
+            }
+        }
+        function ktns(){
+            let chuoi= new Date(document.getElementById("txtns").value);
+            let nam = chuoi.getFullYear();
+            let now = new Date();
+            let year = now.getFullYear();
+            if(eval(year-nam) >=10){
+                spns.innerText ="*";
+            }
+            else{
+                spns.innerText ="phải lớn hơn 10 tuổi";
+            }
+        }
+    </script>
+
+
+    
+
+</head>
+<body>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Đăng ký tài khoản</legend>
+            <label for="lbldn">Tên đăng nhập</label>
+            <input type="text" name="txdn" id="txtdn" onblur="return ktdn();">
+            <span id="spdn">*</span><br><br>
+
+            <label for="lblmk">Mật khẩu</label>
+            <input type="password" name="txMK" id="txtMK" onblur="return ktmk();">
+            <span id="spMK">*</span><br><br>
+
+            <label for="lblnlmk">Nhập lại mật khẩu</label>
+            <input type="password" name="txnlMK" id="txtnlMK" onblur="return ktnlmk();">
+            <span id="spnlMK">*</span><br><br>
+
+            
+        </fieldset>
+        <fieldset>
+            <legend>Thông tin cá nhân</legend>
+            <label for="lblHt">Họ tên</label>
+            <input type="text" name="txHT" id="txtHT" onblur="return ktht();">
+            <span id="spHt">*</span><br><br>
+
+            <label for="lblns">Ngày sinh</label>
+            <input type="date" name="txtns" id="txtns"  onblur="return ktns();">
+            <span id="spns">*</span><br><br>
+
+            <label for="lblgt">Giới tính</label>
+            <input type="radio" name="txgt" id="txtgt" value="Nam">
+        
+            <input type="radio" name="txgt" id="txtgt" value="Nữ"><br><br>
+           
+            
+
+            <label for="lbldc">Địa chỉ</label>
+            <input type="text" name="txdc" id="txtdc" >
+            <span id="spdc"></span><br><br>
+
+            <label for="lbldt">Điện thoại</label>
+            <input type="text" name="txdt" id="txtdt" onblur="return ktsdt();">
+            <span id="spdt">*</span><br><br>
+
+            <label for="lblemail">Email</label>
+            <input type="text" name="txemail" id="txtemail" onblur="return ktemail();">
+            <span id="spemail">*</span><br><br>
+
+            <input type="submit" name="dangky" id="smdk" value="Đăng ký">
+            <input type="submit" name="huy" id="smhuy" value="Hủy">
+        </fieldset>
+    </form>
+</body>
+</html>
